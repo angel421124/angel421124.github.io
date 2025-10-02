@@ -1,98 +1,587 @@
+# 完整的购物学习指南网站首页设计
+
+我将为您创建一个完整的index.html页面，专门用于推广京东、淘宝商品和教培课程，通过佣金链接实现变现。
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>2025年最新7个免费外刊下载网站（亲测可打开）</title>
-    <meta name="keywords" content="外刊下载, 经济学人PDF, 英语精读">
-    <meta name="description" content="汇总7个2025年仍可用的免费外刊下载网站，含经济学人、纽约客、国家地理等最新PDF，零门槛英语精读。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物学习指南 - 京东淘宝优惠券与优质课程推荐</title>
+    <meta name="description" content="专业的购物与学习指南平台，每天为您精选京东、淘宝最新优惠券和特价商品，同时推荐经过验证的优质教育培训课程。">
+    <meta name="keywords" content="京东优惠券,淘宝折扣,教育培训,佣金推广,省钱购物">
     <style>
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:#333;line-height:1.6;max-width:800px;margin:0 auto;padding:20px}
-        h1,h2{color:#111;border-bottom:1px solid #eaeaea;padding-bottom:6px}
-        blockquote{border-left:4px solid #409eff;background:#f5f7fa;padding:10px 15px;margin:1em 0;font-size:14px}
-        table{width:100%;border-collapse:collapse;margin:1em 0}
-        th,td{border:1px solid #e0e0e0;padding:8px 12px;text-align:left}
-        th{background:#fafafa}
-        a{color:#409eff;text-decoration:none}
-        a:hover{text-decoration:underline}
-        img{display:block;margin:10px auto;max-width:100%}
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .logo p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        /* 主要内容区域 */
+        .hero {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ff4e50;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .value-props {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .value-prop {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            width: 200px;
+            border-left: 4px solid #ff4e50;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            position: relative;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #ff4e50;
+            margin: 10px auto;
+        }
+        
+        /* 产品展示区域 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 180px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .product-content {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .product-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            color: #ff4e50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff4e50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #e04446;
+        }
+        
+        .btn-secondary {
+            background: #f9d423;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #e6c220;
+        }
+        
+        /* 底部样式 */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #f9d423;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .value-props {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 网站头部 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>购物学习指南</h1>
+                    <p>精选优惠券与优质课程推荐平台</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">京东优惠</a></li>
+                        <li><a href="#">淘宝折扣</a></li>
+                        <li><a href="#">教育培训</a></li>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<h1>2025年最新7个免费外刊下载网站（亲测可打开）</h1>
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 介绍区域 -->
+        <section class="hero">
+            <h2>欢迎来到购物学习指南</h2>
+            <p>我们是专业的购物与学习指南平台，每天为您精选京东、淘宝最新优惠券和特价商品，同时推荐经过验证的优质教育培训课程。通过我们的链接购物，您能获得独家折扣，我们也能获得少量佣金支持网站运营，实现双赢！</p>
+            
+            <div class="value-props">
+                <div class="value-prop">
+                    <h3>实时更新</h3>
+                    <p>京东、淘宝隐藏优惠券第一时间发布</p>
+                </div>
+                <div class="value-prop">
+                    <h3>真实评测</h3>
+                    <p>每件商品都经过严格筛选和用户反馈收集</p>
+                </div>
+                <div class="value-prop">
+                    <h3>佣金返还</h3>
+                    <p>通过我们链接购买，享受额外折扣和服务</p>
+                </div>
+            </div>
+        </section>
 
-<blockquote>
-  原文首发：<a href="https://angel421124.github.io/" target="_blank">外刊下载站</a>，每日更新，收藏不迷路！
-</blockquote>
+        <!-- 京东优惠区域 -->
+        <h2 class="section-title">京东爆款推荐</h2>
+        <div class="product-grid">
+            <!-- 产品1 -->
+            <div class="product-card">
+                <div class="product-image">美的空调图片</div>
+                <div class="product-content">
+                    <div class="product-title">美的空调 1.5匹 变频冷暖</div>
+                    <div class="product-desc">一级能效，智能控制，静音设计，适合中小户型使用。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥2299</span>
+                        <span class="original-price">¥2599</span>
+                    </div>
+                    <a href="#" class="btn">点击领取300元优惠券</a>
+                </div>
+            </div>
+            
+            <!-- 产品2 -->
+            <div class="product-card">
+                <div class="product-image">小米手机图片</div>
+                <div class="product-content">
+                    <div class="product-title">小米13 5G手机 12GB+256GB</div>
+                    <div class="product-desc">徕卡影像，骁龙处理器，轻薄设计，性能与颜值兼具。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥3999</span>
+                        <span class="original-price">¥4599</span>
+                    </div>
+                    <a href="#" class="btn">立即抢购 12期免息</a>
+                </div>
+            </div>
+            
+            <!-- 产品3 -->
+            <div class="product-card">
+                <div class="product-image">海尔冰箱图片</div>
+                <div class="product-content">
+                    <div class="product-title">海尔冰箱 对开门 535L</div>
+                    <div class="product-desc">风冷无霜，变频节能，大容量存储，满足全家需求。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥3199</span>
+                        <span class="original-price">¥3599</span>
+                    </div>
+                    <a href="#" class="btn">领取400元优惠券</a>
+                </div>
+            </div>
+            
+            <!-- 产品4 -->
+            <div class="product-card">
+                <div class="product-image">联想笔记本图片</div>
+                <div class="product-content">
+                    <div class="product-title">联想小新Pro16 2023款</div>
+                    <div class="product-desc">高性能轻薄本，2.5K高色域屏，适合办公学习使用。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥5999</span>
+                        <span class="original-price">¥6499</span>
+                    </div>
+                    <a href="#" class="btn">学生专享价 查看详情</a>
+                </div>
+            </div>
+        </div>
 
-<h2>一、为什么读外刊？</h2>
-<ol>
-  <li><strong>真题同源</strong>：考研英语、雅思阅读80%题源来自《经济学人》《卫报》。</li>
-  <li><strong>词汇+逻辑双杀</strong>：外刊句式紧凑，一周精读4篇，写作自动提分。</li>
-</ol>
+        <!-- 淘宝优惠区域 -->
+        <h2 class="section-title">淘宝天猫热销</h2>
+        <div class="product-grid">
+            <!-- 产品1 -->
+            <div class="product-card">
+                <div class="product-image">韩都衣舍服饰图片</div>
+                <div class="product-content">
+                    <div class="product-title">韩都衣舍 秋季新款卫衣</div>
+                    <div class="product-desc">纯棉材质，多色可选，时尚百搭，买2送1活动进行中。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥89</span>
+                        <span class="original-price">¥129</span>
+                    </div>
+                    <a href="#" class="btn">进入店铺 领取优惠</a>
+                </div>
+            </div>
+            
+            <!-- 产品2 -->
+            <div class="product-card">
+                <div class="product-image">欧莱雅护肤品图片</div>
+                <div class="product-content">
+                    <div class="product-title">欧莱雅 复颜抗皱套装</div>
+                    <div class="product-desc">买一送一，会员额外95折，适合30+肌肤抗初老。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥299</span>
+                        <span class="original-price">¥399</span>
+                    </div>
+                    <a href="#" class="btn">领取会员专属券</a>
+                </div>
+            </div>
+            
+            <!-- 产品3 -->
+            <div class="product-card">
+                <div class="product-image">家居用品图片</div>
+                <div class="product-content">
+                    <div class="product-title">北欧简约客厅地毯</div>
+                    <div class="product-desc">加厚防滑，多尺寸可选，提升家居格调，限时特惠。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥158</span>
+                        <span class="original-price">¥218</span>
+                    </div>
+                    <a href="#" class="btn">立即购买 满减优惠</a>
+                </div>
+            </div>
+            
+            <!-- 产品4 -->
+            <div class="product-card">
+                <div class="product-image">运动鞋图片</div>
+                <div class="product-content">
+                    <div class="product-title">安踏 男士跑步鞋</div>
+                    <div class="product-desc">透气轻便，缓震耐磨，日常运动穿搭，多色可选。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥239</span>
+                        <span class="original-price">¥339</span>
+                    </div>
+                    <a href="#" class="btn">查看详情 领券立减</a>
+                </div>
+            </div>
+        </div>
 
-<h2>二、7个免费外刊下载网站（2025.9亲测）</h2>
-<table>
-  <thead>
-    <tr>
-      <th>序号</th>
-      <th>网站名</th>
-      <th>支持刊物</th>
-      <th>备注</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td><a href="https://magazinelib.com" target="_blank">MagazineLib</a></td>
-      <td>经济学人、福布斯</td>
-      <td>无需注册，PDF直接下</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><a href="https://pdf-giant.com" target="_blank">PDF-Giant</a></td>
-      <td>国家地理、纽约客</td>
-      <td>更新快，含往期</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><a href="https://github.com/yeniunier/Foreign-publications" target="_blank">GitHub@yeniunier</a></td>
-      <td>经济学人+音频</td>
-      <td>每周日更新</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>英文之旅</td>
-      <td>经济学人精读笔记</td>
-      <td>含中英对照</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td colspan="3"><strong>（防删，完整列表见文末网盘）</strong></td>
-    </tr>
-  </tbody>
-</table>
+        <!-- 教育培训区域 -->
+        <h2 class="section-title">优质课程推荐</h2>
+        <div class="product-grid">
+            <!-- 课程1 -->
+            <div class="product-card">
+                <div class="product-image">Python课程图片</div>
+                <div class="product-content">
+                    <div class="product-title">Python数据分析与人工智能</div>
+                    <div class="product-desc">零基础到就业，实战项目驱动，老师1对1指导，学完可接单。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥2980</span>
+                        <span class="original-price">¥4980</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">预约免费试听课</a>
+                </div>
+            </div>
+            
+            <!-- 课程2 -->
+            <div class="product-card">
+                <div class="product-image">英语课程图片</div>
+                <div class="product-content">
+                    <div class="product-title">商务英语口语提升课程</div>
+                    <div class="product-desc">外教小班课，30天流利对话，职场沟通技巧，不满意退款。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥1680</span>
+                        <span class="original-price">¥2680</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">了解课程大纲</a>
+                </div>
+            </div>
+            
+            <!-- 课程3 -->
+            <div class="product-card">
+                <div class="product-image">设计课程图片</div>
+                <div class="product-content">
+                    <div class="product-title">UI/UX设计全栈课程</div>
+                    <div class="product-desc">从入门到精通，实战项目作品集，就业指导，高薪就业保障。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥3580</span>
+                        <span class="original-price">¥5880</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">立即咨询课程</a>
+                </div>
+            </div>
+            
+            <!-- 课程4 -->
+            <div class="product-card">
+                <div class="product-image">考研课程图片</div>
+                <div class="product-content">
+                    <div class="product-title">2024考研全科全程班</div>
+                    <div class="product-desc">名师授课，个性化学习计划，全程答疑，不过免费重读。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥3999</span>
+                        <span class="original-price">¥5999</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">免费领取备考资料</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<h2>三、一步打包下载（省时间）</h2>
-<p>我把上面7个站点的「最新一期PDF+EPUB+MOBI」打包进一个文件夹，扫码下方<strong>百度网盘赞赏码</strong>即可领取，<strong>完全自愿</strong>：</p>
-<p align="center">
-  <img src="https://angel42124.github.io/images/zanshang.png" width="300" alt="百度网盘赞赏码">
-</p>
+    <!-- 网站底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>购物学习指南是一个专业的购物与学习推荐平台，致力于为用户提供最优质的京东、淘宝优惠信息和教育培训课程。</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <a href="#">首页</a>
+                    <a href="#">京东优惠</a>
+                    <a href="#">淘宝折扣</a>
+                    <a href="#">教育培训</a>
+                    <a href="#">使用教程</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p>客服微信：ShoppingEdu123</p>
+                    <p>邮箱：contact@shoppingedu.com</p>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>声明</h3>
+                    <p>通过我们的链接购买，我们可能获得少量佣金，但这不会影响您的购买价格，有时还能获得额外优惠。感谢您的支持！</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 购物学习指南 版权所有 | 设计用于推广京东、淘宝商品和教培课程</p>
+            </div>
+        </div>
+    </footer>
 
-<h2>四、常见问题</h2>
-<p><strong>Q1：下载后打不开？</strong><br>
-A：用最新版「SumatraPDF」或「Calibre」即可，Mac可用「Apple Books」。</p>
-
-<p><strong>Q2：会侵权吗？</strong><br>
-A：所有资源均来自官方公开下载页，仅供学习，勿二次售卖。</p>
-
-<h2>五、下一步计划</h2>
-<p>本站每天0点自动同步GitHub最新外刊，<strong>收藏首页</strong>不迷路；<br>
-想进群一起精读，<strong>滑到页脚扫码进微信交流群</strong>，每日推送外刊金句。</p>
-
-<hr>
-<p><strong>版权声明</strong><br>
-本文仅汇总公开信息，资源版权归原作者/出版社所有，若侵联删。</p>
-
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有产品卡片添加点击统计（在实际应用中这里可以添加数据分析代码）
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') return; // 避免重复统计链接点击
+                    
+                    const link = this.querySelector('a');
+                    if (link) {
+                        // 在实际应用中，这里可以添加点击统计代码
+                        console.log('产品点击:', this.querySelector('.product-title').textContent);
+                    }
+                });
+            });
+            
+            // 为所有按钮添加点击统计
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // 在实际应用中，这里可以添加按钮点击统计代码
+                    console.log('按钮点击:', this.textContent);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

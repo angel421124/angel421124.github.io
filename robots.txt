@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://angel421124.github.io/sitemap.xml

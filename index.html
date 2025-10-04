@@ -139,6 +139,8 @@
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-card:hover {
@@ -146,18 +148,22 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
         
-        .product-image {
-            height: 180px;
-            background-color: #f5f5f5;
+        .product-icon {
+            height: 100px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
-            font-size: 14px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
         }
         
         .product-content {
             padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-title {
@@ -170,7 +176,7 @@
             font-size: 14px;
             color: #666;
             margin-bottom: 15px;
-            min-height: 60px;
+            flex-grow: 1;
         }
         
         .product-price {
@@ -285,6 +291,31 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
+        
+        /* 纯文本特色样式 */
+        .feature-badge {
+            display: inline-block;
+            background: #ff4e50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .rating {
+            color: #f9d423;
+            margin-bottom: 10px;
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -300,7 +331,6 @@
                     <ul>
                         <li><a href="#">首页</a></li>
                         <li><a href="#">京东优惠</a></li>
-                        <li><a href="#">淘宝折扣</a></li>
                         <li><a href="#">教育培训</a></li>
                         <li><a href="#">使用教程</a></li>
                         <li><a href="#">关于我们</a></li>
@@ -338,177 +368,169 @@
         <div class="product-grid">
             <!-- 产品1 -->
             <div class="product-card">
-                <div class="product-image">美的空调图片</div>
+                <div class="product-icon">静音键盘</div>
                 <div class="product-content">
-                    <div class="product-title">美的空调 1.5匹 变频冷暖</div>
-                    <div class="product-desc">一级能效，智能控制，静音设计，适合中小户型使用。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥2299</span>
-                        <span class="original-price">¥2599</span>
+                    <div class="product-title">狼途L1静音键盘</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.9分</span>
                     </div>
-                    <a href="#" class="btn">点击领取300元优惠券</a>
+                    <div class="product-desc">机械手感，防水，三模静音，高颜值。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥59.9</span>
+                        <span class="original-price">¥69.9</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">防水</span>
+                        <span class="feature-badge">静音</span>
+                        <span class="feature-badge">大气</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAS8JK1olXwAHV1dYCk8RAV8IGlsQXQ4LVlxeAUkTBV9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWA2oIE1IXXwULVlpbFxJSXzI4SSgdPUZVMCw_fDlWBQ1uWEVSHV1wElJROEonAG4KHVgRWA8KXG5tCEwnQgEIEl4XVQ8DU25cOEsRB2YBG1gSVQQDVV9tD0seM28JElMVWwAKUjABOHsnAF8PG1IBW3RDBkpbensnA18LK1sUXQcAXVhUCEoXH28PGVoVXxoCUlpUAUsUBGYLH1wRbQQDVVpUOHvJjftgbwhUIgIFACo0AQ0eRDtXxdWBTHpmUF5cDVonAGZxbx1IJH4GCAghSU9LWWcAcx9-OEV3OlwOVyh_Ym8JaV9dHVkGFwYfDnsSM2gOGms" class="btn">点击领取优惠券购买</a>
                 </div>
             </div>
             
             <!-- 产品2 -->
             <div class="product-card">
-                <div class="product-image">小米手机图片</div>
+                <div class="product-icon">散热器</div>
                 <div class="product-content">
-                    <div class="product-title">小米13 5G手机 12GB+256GB</div>
-                    <div class="product-desc">徕卡影像，骁龙处理器，轻薄设计，性能与颜值兼具。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥3999</span>
-                        <span class="original-price">¥4599</span>
+                    <div class="product-title">手机散热器,制冷降温静音半导体爆款风扇</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.8分</span>
                     </div>
-                    <a href="#" class="btn">立即抢购 12期免息</a>
+                    <div class="product-desc">手机散热器,制冷降温静音半导体爆款风扇。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥49.9</span>
+                        <span class="original-price">¥79.9</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">手机散热器</span>
+                        <span class="feature-badge">制冷快</span>
+                        <span class="feature-badge">超静音</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAS8JK1olXgICVV1aDUwfCl8IGlsSVQ4HVl1VD0IWAV9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWA2gAE14XXg4FXV9fFxJSXzI4STMdP2Z-LwI-Wg9sRTJ7GjBhG3oFElJROEonAG4KHVgRWA8KXG5tCEwnQgEIGl8WVAcFV25cOEsRB2cMElgQWg8DXFltD0seM28JElMVWwAKUjABOHsnAF8PG1IBW3RDBkpbensnA18LK1sUXQcLVFhcCEsWH28IHV0dXRoCUlpVDEIUBm4JGFMWbQQDVVpUOHvJjftuGVJePQFZLRwhDSJIdWdTxdWBTHp1UFlUCFonAGZxbx1IJH4GCCNVbzZEZzcBZiEcKW9QOlwOVyh_Ym8JaV9dO2RwLlc_DnsSM2gOGms" class="btn">立即抢购有优惠</a>
                 </div>
             </div>
             
             <!-- 产品3 -->
             <div class="product-card">
-                <div class="product-image">海尔冰箱图片</div>
+                <div class="product-icon">手柄摇杆帽三对</div>
                 <div class="product-content">
-                    <div class="product-title">海尔冰箱 对开门 535L</div>
-                    <div class="product-desc">风冷无霜，变频节能，大容量存储，满足全家需求。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥3199</span>
-                        <span class="original-price">¥3599</span>
+                    <div class="product-title">手柄摇杆帽三对</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.7分</span>
+                        <span>🔥 0.2万+评价</span>
                     </div>
-                    <a href="#" class="btn">领取400元优惠券</a>
+                    <div class="product-desc">骷髅skullnco 吃鸡神器 防滑防汗防磨损手柄摇杆帽。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥28</span>
+                        <span class="original-price">¥38</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">防滑</span>
+                        <span class="feature-badge">防汗</span>
+                        <span class="feature-badge">防磨损</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BAS8JK1olXwQAXFpcDU8WAl8IGloRXg8AVl9cCUgWAF9MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWAmsLElkXXAcDV19eFxJSXzI4QyBqX2dwBhc4YUgQAjUMbAtyWAcGJFJROEonAG4KHVgRWA8KXG5tCEwnQgEIGFkcWQUKU25cOEsRB2cMElwdWgcLVlttD0seM28JElMVWwAKUjABOHsnAF8PG1IBW3RDBkpbensnA18LK1sUXQcGUVtZCUgQH28LGV8QVBoCUlpVDEIQCmcOHVkUbQQDVVpUOHvJjt9zbi5DDnNGNz0FDxRWeglOxdalTHp1XVpZDFonZBALTQFlOW1hFCsCbSh1ajQLSwhsGE9nOlwqfh1gSydMQjgTFlFGB141THsSM2gOGms" class="btn">点击优惠购买</a>
                 </div>
             </div>
-            
-            <!-- 产品4 -->
-            <div class="product-card">
-                <div class="product-image">联想笔记本图片</div>
-                <div class="product-content">
-                    <div class="product-title">联想小新Pro16 2023款</div>
-                    <div class="product-desc">高性能轻薄本，2.5K高色域屏，适合办公学习使用。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥5999</span>
-                        <span class="original-price">¥6499</span>
-                    </div>
-                    <a href="#" class="btn">学生专享价 查看详情</a>
+         
                 </div>
             </div>
         </div>
 
-        <!-- 淘宝优惠区域 -->
-        <h2 class="section-title">淘宝天猫热销</h2>
-        <div class="product-grid">
-            <!-- 产品1 -->
-            <div class="product-card">
-                <div class="product-image">韩都衣舍服饰图片</div>
-                <div class="product-content">
-                    <div class="product-title">韩都衣舍 秋季新款卫衣</div>
-                    <div class="product-desc">纯棉材质，多色可选，时尚百搭，买2送1活动进行中。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥89</span>
-                        <span class="original-price">¥129</span>
-                    </div>
-                    <a href="#" class="btn">进入店铺 领取优惠</a>
-                </div>
-            </div>
-            
-            <!-- 产品2 -->
-            <div class="product-card">
-                <div class="product-image">欧莱雅护肤品图片</div>
-                <div class="product-content">
-                    <div class="product-title">欧莱雅 复颜抗皱套装</div>
-                    <div class="product-desc">买一送一，会员额外95折，适合30+肌肤抗初老。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥299</span>
-                        <span class="original-price">¥399</span>
-                    </div>
-                    <a href="#" class="btn">领取会员专属券</a>
-                </div>
-            </div>
-            
-            <!-- 产品3 -->
-            <div class="product-card">
-                <div class="product-image">家居用品图片</div>
-                <div class="product-content">
-                    <div class="product-title">北欧简约客厅地毯</div>
-                    <div class="product-desc">加厚防滑，多尺寸可选，提升家居格调，限时特惠。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥158</span>
-                        <span class="original-price">¥218</span>
-                    </div>
-                    <a href="#" class="btn">立即购买 满减优惠</a>
-                </div>
-            </div>
-            
-            <!-- 产品4 -->
-            <div class="product-card">
-                <div class="product-image">运动鞋图片</div>
-                <div class="product-content">
-                    <div class="product-title">安踏 男士跑步鞋</div>
-                    <div class="product-desc">透气轻便，缓震耐磨，日常运动穿搭，多色可选。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥239</span>
-                        <span class="original-price">¥339</span>
-                    </div>
-                    <a href="#" class="btn">查看详情 领券立减</a>
-                </div>
-            </div>
-        </div>
+
 
         <!-- 教育培训区域 -->
-        <h2 class="section-title">优质课程推荐</h2>
+        <h2 class="section-title">优质学习专区推荐</h2>
         <div class="product-grid">
             <!-- 课程1 -->
             <div class="product-card">
-                <div class="product-image">Python课程图片</div>
+                <div class="product-icon">红色经典读物</div>
                 <div class="product-content">
-                    <div class="product-title">Python数据分析与人工智能</div>
-                    <div class="product-desc">零基础到就业，实战项目驱动，老师1对1指导，学完可接单。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥2980</span>
-                        <span class="original-price">¥4980</span>
+                    <div class="product-title">恰同学少年</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 5.0分</span>
+                        <span>🔥 1万+学员</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">预约免费试听课</a>
+                    <div class="product-desc">中小学课外阅读爱国主义教育青少年红色经典励志研学读物</div>
+                    <div class="product-price">
+                        <span class="current-price">¥25.2</span>
+                        <span class="original-price">38.8</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">红色经典</span>
+                        <span class="feature-badge">课外阅读</span>
+                        <span class="feature-badge">励志研学</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BASUJK1olXwQFUFxaCUwVCl8IGFwRWAELVm4ZVxNJXF9RXh5UHw0cSgYYXBcIWDoXSQVJQwYBU1pYD0IVHDZNRwYlJE4ELiU7aQB0YmxQczpDX11REToZaEcbM244GFoXWwUGUVdVAHsnA2g4TTUVXAcDVV9ZCkgRM244G10RVQILXV1eDEIUA18PG1IlXQcLXF5bDkMRbTM4K2sWbQECXUpbegpFF2l6K2sVbQUyVF9dCU8XA2YIHVMJXQQHV1ZbFEsRB2cMElIVVQ8LUFhtCkoWB2Y4K4WbyW0LPR8-ej58SzJwXjxSHH3c2spMeiAXB2oZKwZcX2d4MwMNTSJDW2t0SCBQLWR8LC5YfCUVX2Z1EltWGWNHPTcAQRxPASg4HmsVWwYAZA" class="btn btn-secondary">优惠购书</a>
                 </div>
             </div>
             
             <!-- 课程2 -->
             <div class="product-card">
-                <div class="product-image">英语课程图片</div>
+                <div class="product-icon">初中必读经典</div>
                 <div class="product-content">
-                    <div class="product-title">商务英语口语提升课程</div>
-                    <div class="product-desc">外教小班课，30天流利对话，职场沟通技巧，不满意退款。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥1680</span>
-                        <span class="original-price">¥2680</span>
+                    <div class="product-title">红星照耀中国和红岩导读</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.8分</span>
+                        <span>🔥 4500+学员</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">了解课程大纲</a>
+                    <div class="product-desc">八年级上册必读正版课外阅读书初二8上语文课外人民阅读书籍推荐。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥19.8</span>
+                        <span class="original-price">¥86.7</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">八年级上册</span>
+                        <span class="feature-badge">课外阅读</span>
+                        <span class="feature-badge">阅读推荐</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BASYJK1olXwQAVF1eDkwTBV8IH1odWQAHU24ZVxNJXF9RXh5UHw0cSgYYXBcIWDoXSQVJQwYGVVZZDk4QHDZNRwYlGmNBVDY4e0t0YBVaUiFXKVhdAQUjeEcbM244GFoXWwUGUVdVAHsnA2g4TTUVXAcDVVZVAEoXM244G10RVQILXVlcDEITBl8PG1IlXQcLXF5bDkMRbTM4K2sWbQECXUpbegpFF2l6K2sVbQUyVF9dCU8XA2YIHVMJXQQHV1ZbFEsRB2cMElIVVQ8LUFhtCkoWB2Y4K4WbyXILECknDBZVB2dVQSB1BFbc2spMdC8TA24NCmtlOGNLFCZedRlqUS5RRDASWXQHKideTyx5AQl8XTBtHX1fBhsYeAJkfQ4AK14lXQACVm4" class="btn btn-secondary">优惠购书</a>
                 </div>
             </div>
             
             <!-- 课程3 -->
             <div class="product-card">
-                <div class="product-image">设计课程图片</div>
+                <div class="product-icon">傅海棠观点集</div>
                 <div class="product-content">
-                    <div class="product-title">UI/UX设计全栈课程</div>
-                    <div class="product-desc">从入门到精通，实战项目作品集，就业指导，高薪就业保障。</div>
-                    <div class="product-price">
-                        <span class="current-price">¥3580</span>
-                        <span class="original-price">¥5880</span>
+                    <div class="product-title">交易之道傅海棠观点集</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.9分</span>
+                        <span>🔥 2800+</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">立即咨询课程</a>
+                    <div class="product-desc">投资理财 期货投资理念交易方法。</div>
+                    <div class="product-price">
+                        <span class="current-price">¥131.8</span>
+                        <span class="original-price">¥133.8</span>
+                    </div>
+                    <div>
+                        <span class="feature-badge">期货交易</span>
+                        <span class="feature-badge">金融投资</span>
+                        <span class="feature-badge">傅海棠观点</span>
+                    </div>
+                    <a href="https://union-click.jd.com/jdc?e=618%7Cpc%7C&p=JF8BATAJK1olXwIHXV1UAEwTB18IGlsQXw4LU11fAE4QC19MRANLAjZbERscSkAJHTdNTwcKBlMdBgABFksWA2oKE1ISXgQKUVlVFxJSXzI4YCRpOGVlEQw-eDFWfy54YhBePV8HJFJROEonAG4KHVgRWA8KXG5tCEwnQgEIElsdXAYFXG5cOEsRB2cMElIcVAAKXV1tD0seM28JElMVWwAKUjABOHsnAF8PG1IBW3RDBkpbensnA18LK1sUXQcGUFxaCkoUH28PGlwTWRoCUlpVDEIeCmkIGlgUbQQDVVpUOHvJjt93bFhxAAJyFR4vXUxzV2xWxdalTHp1VlxVCVoneB1QZBlQJQJjEh0DDzZecyhqHjBMO1QCOlwmciledRVTazp8KmMAVicfansSM28OG1kl" class="btn btn-secondary">优惠购书</a>
                 </div>
             </div>
             
             <!-- 课程4 -->
             <div class="product-card">
-                <div class="product-image">考研课程图片</div>
+                <div class="product-icon">考试培训咨询</div>
                 <div class="product-content">
-                    <div class="product-title">2024考研全科全程班</div>
-                    <div class="product-desc">名师授课，个性化学习计划，全程答疑，不过免费重读。</div>
+                    <div class="product-title">2025考试全科全程班</div>
+                    <div class="product-meta">
+                        <span>⭐️⭐️⭐️⭐️⭐️ 4.9分</span>
+                        <span>🔥 5600+学员</span>
+                    </div>
+                    <div class="product-desc">小学、初中、高中名师授课，个性化学习计划，全程答疑，免费赠送电子资料。</div>
                     <div class="product-price">
-                        <span class="current-price">¥3999</span>
+                        <span class="current-price">¥*999</span>
                         <span class="original-price">¥5999</span>
                     </div>
-                    <a href="#" class="btn btn-secondary">免费领取备考资料</a>
+                    <div>
+                        <span class="feature-badge">名师授课</span>
+                        <span class="feature-badge">个性化计划</span>
+                        <span class="feature-badge">赠送电子资料</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">免费咨询contact421@163.com</a>
                 </div>
             </div>
         </div>
@@ -527,15 +549,14 @@
                     <h3>快速链接</h3>
                     <a href="#">首页</a>
                     <a href="#">京东优惠</a>
-                    <a href="#">淘宝折扣</a>
                     <a href="#">教育培训</a>
                     <a href="#">使用教程</a>
                 </div>
                 
                 <div class="footer-section">
                     <h3>联系我们</h3>
-                    <p>客服微信：ShoppingEdu123</p>
-                    <p>邮箱：contact@shoppingedu.com</p>
+                    <!---<p>客服微信：ShoppingEdu123</p>-->
+                    <p>邮箱：contact421@163.com</p>
                     <p>工作时间：周一至周五 9:00-18:00</p>
                 </div>
                 
@@ -546,7 +567,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 购物学习指南 版权所有 | 设计用于推广京东、淘宝商品和教培课程</p>
+                <p>&copy; 2025 购物学习指南 版权所有 | 设计用于推广京东、淘宝商品和教培课程</p>
             </div>
         </div>
     </footer>
